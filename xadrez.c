@@ -1,6 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//Sistemas de recursividades
+void moverbispo(int casas){
+    if(casas > 0){
+        printf("cima\n");
+        printf("Direita\n");
+        moverbispo(casas - 1);
+    }
+}
+
+void movertorre(int casas){
+    if(casas > 0){
+        printf("Direita\n");
+        movertorre(casas - 1);
+    }
+}
+
+void moverrainha(int casas){
+    if(casas > 0){
+        printf("Esquerda\n");
+        moverrainha(casas - 1);
+    }
+}
+
 int main() {
     int i = 1;
     char escolha;
@@ -15,52 +38,39 @@ int main() {
     printf("##ESCOLHA##\n");
     scanf("%c", &escolha);
     
+    //Movimentação das peças
     switch (escolha)
     {
-    //
     case 'A':
     case 'a':
         printf("***Bispo vai andar***\n\n");
 
-        while (i <= 5)
-        {
-            printf("Cima\n");
-            printf("Direita\n");
-            i++;
-        }
+        moverbispo(5);
     break;
     case 'B':
     case 'b':
         printf("***Torre vai andar***\n\n");
 
-        do
-        {
-            printf("Direita\n");
-            i++;
-
-        }while (i <= 5);
+        movertorre(5);
     break;
     case 'C':
     case 'c':
         printf("***Rainha vai andar***\n\n");
 
-        for (int i = 1; i <= 8; i++){
-            printf("Esquerda\n");
-        }
+        moverrainha(8);
     break;
     case 'D':
     case 'd':
         printf("***Cavalo vai andar***\n\n");
 
-        while (i <= 1)
-        {
-            for (int j = 0; j < 2; j++){
-                printf("Baixo\n");
-            }
-            printf("Esquerda\n");
-            i++;
+    while (i <= 1)
+    {
+        for (int j = 0; j < 2; j++){
+            printf("Cima\n");
         }
-        
+        printf("Direita\n");
+        i++;
+    }
         
     default:
         printf("\n\nEscolha inválida!");
