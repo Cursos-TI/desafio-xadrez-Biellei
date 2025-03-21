@@ -11,6 +11,7 @@ int main() {
     printf("A. Bispo\n");
     printf("B. Torre\n");
     printf("C. Rainha\n");
+    printf("D. Cavalo\n");
     printf("##ESCOLHA##\n");
     scanf("%c", &escolha);
     
@@ -47,6 +48,20 @@ int main() {
             printf("Esquerda\n");
         }
     break;
+    case 'D':
+    case 'd':
+        printf("***Cavalo vai andar***\n\n");
+
+        while (i <= 1)
+        {
+            for (int j = 0; j < 2; j++){
+                printf("Baixo\n");
+            }
+            printf("Esquerda\n");
+            i++;
+        }
+        
+        
     default:
         printf("\n\nEscolha inválida!");
     break;
